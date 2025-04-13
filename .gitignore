@@ -70,3 +70,11 @@ crashlytics-build.properties
 # Temporary auto-generated Android Assets
 /[Aa]ssets/[Ss]treamingAssets/aa.meta
 /[Aa]ssets/[Ss]treamingAssets/aa/*
+
+# === FinalProjectBE (서버 백엔드) 비밀 파일 무시 ===
+FinalProjectBE/.env
+FinalProjectBE/unity-voice-ai-edc9496f2f84.json
+FinalProjectBE/venv/
+FinalProjectBE/__pycache__/
+FinalProjectBE/*.pyc
+
