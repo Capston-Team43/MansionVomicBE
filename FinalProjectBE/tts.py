@@ -1,5 +1,6 @@
 import os
 import requests
+from pydub import AudioSegment 
 from datetime import datetime
 from dotenv import load_dotenv
 from clone import get_latest_cloned_voice_uri
@@ -60,6 +61,11 @@ def generate_tts(text: str) -> str:
         for chunk in resp.iter_content(chunk_size=4096):
             if chunk:
                 f.write(chunk)
+
+    # 볼륨 조절 코드 추가
+    audio = AudioSegment.from_file(fpath, format="mp3")
+    louder_audio = audio + 6  # 원하는 dB로 증폭 또는 감소
+    louder_audio.export(fpath, format="mp3")
 
     print(f"✅ TTS 저장 완료: {fpath}")
     return fpath
